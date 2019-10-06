@@ -26,14 +26,14 @@ public class TrelloClient {
     @Value("${trello.app.token}")
     private String trelloToken;
 
-    @Value("$(trello.username)")
+    @Value("$(trello.app.username)")
     private String trelloUsername;
 
     @Autowired
     private RestTemplate restTemplate;
 
     private URI getTrelloUrl() {
-        URI url = UriComponentsBuilder.fromHttpUrl(trelloApiEndpoint + "/members/pattkam/boards")
+        URI url = UriComponentsBuilder.fromHttpUrl(trelloApiEndpoint + "/members/" + trelloUsername + "/boards")
                 .queryParam("key", trelloAppKey)
                 .queryParam("token", trelloToken)
                 .queryParam("username", trelloUsername)
