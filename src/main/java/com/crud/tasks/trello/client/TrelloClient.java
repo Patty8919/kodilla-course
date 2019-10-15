@@ -50,6 +50,7 @@ public class TrelloClient {
         return restTemplate.postForObject(url, null, CreatedTrelloCard.class);
     }
 
+
     public List<TrelloBoardDto> getTrelloBoards() {
         try {
             TrelloBoardDto[] boardsResponse = restTemplate.getForObject(getTrelloUrl(), TrelloBoardDto[].class);
@@ -59,5 +60,6 @@ public class TrelloClient {
             return new ArrayList<>();
         }
     }
+
 
 }
