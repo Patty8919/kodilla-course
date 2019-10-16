@@ -32,8 +32,8 @@ public class EmailScheduler {
 
     private String messageSize (long size) {
         if (size <= 1)
-            return size + "task";
+            return size + " task";
         else
-            return size + "tasks";
+            return size + " tasks";
     }
 }
