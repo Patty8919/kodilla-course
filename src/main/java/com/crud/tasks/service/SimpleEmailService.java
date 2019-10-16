@@ -9,6 +9,8 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 
 @Service
 public class SimpleEmailService {
@@ -36,9 +38,7 @@ public class SimpleEmailService {
         mailMessage.setSubject(mail.getSubject());
         mailMessage.setText(mail.getSubject());
 
-        if(mail.getToCc()== null || !mail.getToCc().isEmpty()) {
-            mailMessage.setCc(mail.getToCc());
-        }
+        Optional.ofNullable(mail.getToCc()).ifPresent(mailMessage::setCc);
         return mailMessage;
     }
 }
