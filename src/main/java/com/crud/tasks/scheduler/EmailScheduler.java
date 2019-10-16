@@ -27,13 +27,13 @@ public class EmailScheduler {
         simpleEmailService.send(new Mail(
                 adminConfig.getAdminMail(),
                 SUBJECT,
-                "Currently in database you got: " + messageSize(size) + "tasks",""));
+                "Currently in database you got: " + messageSize(size) + "",""));
     }
 
     private String messageSize (long size) {
         if (size <= 1)
-            return size + "Task";
+            return size + "task";
         else
-            return size + "Tasks";
+            return size + "tasks";
     }
 }
