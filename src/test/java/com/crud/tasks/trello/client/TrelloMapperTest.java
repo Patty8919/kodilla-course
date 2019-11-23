@@ -113,7 +113,7 @@ public class TrelloMapperTest {
         //When
         Task task = taskMapper.mapToTask(taskDto);
         //Then
-        Assert.assertEquals(1L, (long)task.getId());
+        Assert.assertEquals(1L, (long) task.getId());
         Assert.assertEquals("name1", task.getTitle());
         Assert.assertEquals("description1", task.getContent());
     }
@@ -125,7 +125,7 @@ public class TrelloMapperTest {
         //When
         TaskDto taskDto = taskMapper.mapToTaskDto(task);
         //Then
-        Assert.assertEquals(1L, (long)task.getId());
+        Assert.assertEquals(1L, (long) task.getId());
         Assert.assertEquals("name1", task.getTitle());
         Assert.assertEquals("description1", task.getContent());
     }

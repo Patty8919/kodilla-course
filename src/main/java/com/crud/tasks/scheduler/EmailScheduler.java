@@ -27,7 +27,7 @@ public class EmailScheduler {
         simpleEmailService.send(new Mail(
                 adminConfig.getAdminMail(),
                 SUBJECT,
-                "Currently in database you got: " + messageSize(size) + "",""));
+                "Currently in database you got: " + messageSize(size) + "",null));
     }
 
     private String messageSize (long size) {
