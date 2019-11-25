@@ -72,10 +72,13 @@ public class TaskControllerTest {
     @Test
     public void shouldDeleteTask() throws Exception {
         //Given
+        Task task = new Task(1L, "Test title", "Test content");
+        dbService.saveTask(task);
         //When & Then
         mockMvc.perform(delete("/v1/task/deleteTask").contentType(MediaType.APPLICATION_JSON)
                 .param("taskId", "1"))
                 .andExpect(status().isOk());
+        verify(dbService, times(1)).deleteTask(1L);
     }
 
 
