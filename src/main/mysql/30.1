@@ -1,0 +1,24 @@
+DROP FUNCTION IF EXISTS VipLevel;
+
+DELIMITER $$
+
+CREATE FUNCTION VipLevel(userId INT) returns varchar(20) DETERMINISTIC
+BEGIN
+	DECLARE result VARCHAR(20) DEFAULT 'Standard user' ;
+    IF userId >= 20 THEN
+		SET result = 'Gold user';
+	ELSEIF userId >= 15 AND userId < 20 THEN
+		SET result = 'Silver user';
+    ELSEIF userId >= 10 AND userId < 15 THEN
+		SET result = 'Bronze user';
+    ELSEIF userId <= 0 THEN
+		SET result = 'Not exists';
+    ELSE
+		SET result = 'Standard user';
+    END IF;
+    RETURN result;
+END $$
+
+DELIMITER ;
+
+SELECT VipLevel(0) AS LEVEL;
