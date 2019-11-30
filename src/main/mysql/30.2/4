@@ -1,0 +1,3 @@
+CALL UpdateBestsellers();
+
+SELECT * FROM BOOKS;
