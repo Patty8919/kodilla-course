@@ -1,5 +1,5 @@
 UPDATE STATS
-	SET BESTSELLER_COUNT = "Bestsellers"
+	SET BESTSELLERS_COUNT = "Bestsellers"
     WHERE VALUE IN (bestsellers_count);
     
  COMMIT;
