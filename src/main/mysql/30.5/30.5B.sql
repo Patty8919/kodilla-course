@@ -1,6 +1,7 @@
 UPDATE STATS
-	SET VALUE = "Bestseller"
-    WHERE STAT_ID IN (1);
+	SET STAT = "BESTSELLERS"
+    WHERE STAT_ID IN (1)
+    AND VALUE;
     
  COMMIT;
  
