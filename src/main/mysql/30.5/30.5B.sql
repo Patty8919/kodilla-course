@@ -1,7 +1,0 @@
-UPDATE STATS
-	SET BESTSELLER_COUNT = "Bestsellers"
-    WHERE VALUE IN (1,2,3,4,5);
-    
- COMMIT;
- 
- SELECT * FROM STATS;
