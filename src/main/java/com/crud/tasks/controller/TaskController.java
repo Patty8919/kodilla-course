@@ -18,7 +18,7 @@ public class TaskController {
     @Autowired
     private TaskMapper taskMapper;
 
-
+    @RequestMapping(method = RequestMethod.GET)
     public List<TaskDto> getTasks() {
         return taskMapper.mapToTaskDtoList(service.getAllTasks());
     }
@@ -28,12 +28,12 @@ public class TaskController {
         return taskMapper.mapToTaskDto(service.getTask(taskId).orElseThrow(TaskNotFoundException::new));
     }
 
-
+    @RequestMapping(method = RequestMethod.POST)
     public void createTask(@RequestBody TaskDto taskDto) {
         service.saveTask(taskMapper.mapToTask(taskDto));
     }
 
-
+    @RequestMapping(method = RequestMethod.PUT)
     public TaskDto updateTask(@RequestBody TaskDto taskDto) {
         return taskMapper.mapToTaskDto(service.saveTask(taskMapper.mapToTask(taskDto)));
     }
